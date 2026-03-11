@@ -1,7 +1,7 @@
 
 
 
-# Numerical Linear Algebra Toolkit
+# Scientific Computing Codebase (1.0) - Updated 11/03/2026 Wednesday
 
 This repository contains a collection of Python scripts demonstrating fundamental numerical linear algebra algorithms. It includes implementations for solving linear systems, matrix factorizations, and a practical application of Singular Value Decomposition (SVD) for image compression.
 
