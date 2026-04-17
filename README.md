@@ -1,7 +1,7 @@
 
 
 
-# Scientific Computing Codebase (1.0) - Updated 18/03/2026 Wednesday
+# Scientific Computing Codebase (1.1) - Updated 17/04/2026 Friday
 
 This repository contains a collection of Python scripts demonstrating fundamental numerical linear algebra algorithms. It includes implementations for solving linear systems, matrix factorizations, and a practical application of Singular Value Decomposition (SVD) for image compression.
 
@@ -16,7 +16,7 @@ pip install numpy matplotlib
 
 ## Repository Structure
 
-The scripts can be broadly categorized into three main areas: solving linear equations, matrix factorization, and practical applications.
+The scripts can be broadly categorized into three main areas: iterative and direct solvers, matrix factorizations, and practical applications.
 
 ### 1. Solving Linear Systems
 These scripts are used to solve the equation $Ax = b$ for a given matrix $A$ and vector $b$.
@@ -32,6 +32,14 @@ These scripts are used to solve the equation $Ax = b$ for a given matrix $A$ and
 *   **`stdesc.py`**
     *   **Description**: Implements the Method of Steepest Descent, an iterative optimization algorithm used to solve systems of linear equations. 
     *   **Visualization**: For 2D systems, this script uses `matplotlib` to generate a contour plot showing the descent path alongside a loss convergence graph.
+
+*   **`stdesc-newtons.py`**
+    *   **Description**: Implements steepest descent for a 2D quadratic objective and computes each step length with a Newton line search on the one-dimensional directional derivative.
+    *   **Visualization**: Produces contour lines and overlays the optimization path to illustrate convergence to the minimizer.
+
+*   **`stdesc-secant.py`**
+    *   **Description**: Implements steepest descent for the same 2D quadratic objective, but computes each step length using the secant method applied to the directional derivative.
+    *   **Visualization**: Produces contour lines and overlays the descent trajectory from the initial guess to the optimum.
 
 *   **`cgdesc.py`**
     *   **Description**: Implements the Conjugate Gradient Descent method, an iterative algorithm for solving symmetric positive-definite systems $Ax = b$. Converges significantly faster than Steepest Descent by constructing A-conjugate search directions.
@@ -83,5 +91,7 @@ python gauss-elim.py
 ```
 
 For scripts that require inputs (`gauss-elim.py`, `LU-decomp.py`, `qr-fact.py`, `stdesc.py`, `cgdesc.py`, `cgdesc_partitioned.py`, `svd-manual.py`), simply follow the on-screen instructions. 
+
+For the line-search steepest-descent demos (`stdesc-newtons.py` and `stdesc-secant.py`), run the scripts directly to view the computed optimum and contour-path visualization.
 
 For the image compression script (`svd-compression.py`), ensure you have an image file named `original.png` in the same directory before execution.
